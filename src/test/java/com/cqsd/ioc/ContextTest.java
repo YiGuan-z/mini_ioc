@@ -1,10 +1,11 @@
-package com.cqsd.dl;
+package com.cqsd.ioc;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -77,6 +78,9 @@ class A {
         System.out.println("a = " + a);
         System.out.println("b = " + b);
         System.out.println(bc);
+        final var list = Stream.of(1, 2, 3, 4, 5, 6, 7).filter(it -> it % 2 == 0).toList();
+        Stream.of(new Object(),new Object(),new Object()).map(Object::hashCode).forEach(System.out::println);
+        System.out.println(list);
     }
 }
 
